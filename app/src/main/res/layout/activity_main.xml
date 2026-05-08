@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="#0D0D0D"
+    android:padding="24dp">
+
+    <!-- LEFT PANEL: RAM Stats + Buttons -->
+    <LinearLayout
+        android:layout_width="320dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#1A1A2E"
+        android:padding="20dp"
+        android:layout_marginEnd="16dp">
+
+        <!-- App Title -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📺 TV Booster"
+            android:textSize="26sp"
+            android:textColor="#00E5FF"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Android TV Performance Manager"
+            android:textSize="12sp"
+            android:textColor="#888888"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Divider -->
+        <View android:layout_width="match_parent" android:layout_height="1dp"
+            android:background="#333355" android:layout_marginBottom="16dp"/>
+
+        <!-- RAM USAGE SECTION -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RAM USAGE"
+            android:textSize="11sp"
+            android:textColor="#666688"
+            android:letterSpacing="0.15"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- RAM Percentage -->
+        <TextView
+            android:id="@+id/tvRamPercent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0%"
+            android:textSize="48sp"
+            android:textColor="#00E5FF"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Progress Bar -->
+        <ProgressBar
+            android:id="@+id/progressRam"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:max="100"
+            android:progress="0"
+            android:progressBackgroundTint="#333355"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- RAM Details -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="4dp">
+            <TextView android:id="@+id/tvRamUsed" android:layout_width="0dp"
+                android:layout_weight="1" android:layout_height="wrap_content"
+                android:text="Used: -- MB" android:textColor="#FF7043" android:textSize="13sp"/>
+            <TextView android:id="@+id/tvRamFree" android:layout_width="0dp"
+                android:layout_weight="1" android:layout_height="wrap_content"
+                android:text="Free: -- MB" android:textColor="#66BB6A" android:textSize="13sp"
+                android:gravity="end"/>
+        </LinearLayout>
+
+        <TextView android:id="@+id/tvRamTotal"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Total: -- MB" android:textColor="#888888" android:textSize="12sp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Divider -->
+        <View android:layout_width="match_parent" android:layout_height="1dp"
+            android:background="#333355" android:layout_marginBottom="16dp"/>
+
+        <!-- App Count -->
+        <TextView android:id="@+id/tvAppCount"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Loading apps..."
+            android:textColor="#BBBBDD" android:textSize="14sp" android:textStyle="bold"
+            android:gravity="center" android:layout_marginBottom="20dp"/>
+
+        <!-- Buttons -->
+        <Button
+            android:id="@+id/btnKillAll"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="⚡ BOOST NOW (Kill All)"
+            android:textSize="14sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#E53935"
+            android:layout_marginBottom="10dp"
+            android:focusable="true"/>
+
+        <Button
+            android:id="@+id/btnKillSelected"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Kill Selected"
+            android:textSize="14sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#1565C0"
+            android:layout_marginBottom="10dp"
+            android:focusable="true"/>
+
+        <Button
+            android:id="@+id/btnRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="🔄 Refresh List"
+            android:textSize="13sp"
+            android:textColor="#CCCCCC"
+            android:backgroundTint="#2A2A4A"
+            android:focusable="true"/>
+
+        <View android:layout_width="match_parent" android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <!-- Status -->
+        <TextView android:id="@+id/tvStatus"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Initializing..." android:textColor="#888888" android:textSize="11sp"
+            android:gravity="center" android:padding="4dp"/>
+    </LinearLayout>
+
+    <!-- RIGHT PANEL: App List -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#161625"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BACKGROUND APPS"
+            android:textSize="11sp"
+            android:textColor="#666688"
+            android:letterSpacing="0.15"
+            android:layout_marginBottom="12dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvApps"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:descendantFocusability="afterDescendants"/>
+    </LinearLayout>
+
+</LinearLayout>

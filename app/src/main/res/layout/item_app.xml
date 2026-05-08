@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:layout_marginBottom="4dp"
+    android:background="@drawable/item_bg"
+    android:focusable="true"
+    android:gravity="center_vertical">
+
+    <CheckBox
+        android:id="@+id/cbSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:buttonTint="#00E5FF"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvAppLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#EEEEFF"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvAppPackage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#666688"
+            android:textSize="11sp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvAppType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:padding="4dp"
+        android:background="#22224A"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"/>
+
+</LinearLayout>
